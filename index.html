@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fighting game</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "East Sea Dokdo";
+      }
+      body {
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0f172a;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: relative; display: inline-block">
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <!-- Player 1 health bar -->
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            border: 4px solid #0f172a;
+            border-radius: 20px;
+          "
+        >
+          <div
+            style="
+              background: rgb(255, 70, 70);
+              background: linear-gradient(
+                90deg,
+                rgba(255, 70, 70, 1) 0%,
+                rgba(184, 0, 0, 1) 50%,
+                rgba(0, 0, 0, 1) 100%
+              );
+              height: 30px;
+              width: 100%;
+              border-radius: 20px;
+            "
+          ></div>
+          <div
+            id="playerHealth"
+            style="
+              position: absolute;
+              background: #a3e635;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              border-radius: 20px;
+            "
+          ></div>
+        </div>
+        <!-- Timer -->
+        <div
+          id="timer"
+          style="
+            color: #e2e8f0;
+            font-size: 40px;
+            background-color: #0f172a;
+            width: 100px;
+            height: 60px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #e2e8f0;
+            border-radius: 20px;
+          "
+        ></div>
+        <!-- Player 2 health bar -->
+        <div
+          style="
+            position: relative;
+            width: 100%;
+            border: 4px solid #0f172a;
+            border-radius: 20px;
+          "
+        >
+          <div
+            style="
+              background: rgb(0, 0, 0);
+              background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 1) 0%,
+                rgba(184, 0, 0, 1) 50%,
+                rgba(255, 70, 70, 1) 100%
+              );
+              height: 30px;
+              border-radius: 20px;
+            "
+          ></div>
+          <div
+            id="enemyHealth"
+            style="
+              position: absolute;
+              background: #a3e635;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              border-radius: 20px;
+            "
+          ></div>
+        </div>
+      </div>
+      <div
+        id="displayText"
+        style="
+          font-size: 60px;
+          position: absolute;
+          color: #0f172a;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: none;
+        "
+      ></div>
+      <canvas></canvas>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
