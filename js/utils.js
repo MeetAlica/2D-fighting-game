@@ -22,7 +22,7 @@ function determineWinner({ player, enemy, timerId }) {
   }
 }
 
-let timer = 31;
+let timer = 61;
 let timerId;
 function decreaseTimer() {
   if (timer > 0) {
@@ -45,7 +45,7 @@ window.addEventListener("keydown", (event) => {
     keys.Enter.pressed = true;
 
     clearTimeout(timerId);
-    timer = 21;
+    timer = 61;
     decreaseTimer();
 
     player.health = 100;
