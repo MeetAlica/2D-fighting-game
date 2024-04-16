@@ -246,6 +246,9 @@ function animate() {
 
 animate();
 
+playerScore = 0;
+enemyScore = 0;
+
 window.addEventListener("keydown", (event) => {
   // Player movements
   if (!player.dead) {
@@ -263,6 +266,12 @@ window.addEventListener("keydown", (event) => {
         break;
       case "s":
         player.attack();
+        setTimeout(function () {
+          if (enemy.health == 0 && !enemy.dead) {
+            playerScore++;
+            document.getElementById("playerScore").textContent = playerScore;
+          }
+        }, 500);
         break;
     }
   }
@@ -283,6 +292,12 @@ window.addEventListener("keydown", (event) => {
         break;
       case "ArrowDown":
         enemy.attack();
+        setTimeout(function () {
+          if (player.health == 0 && !player.dead) {
+            enemyScore++;
+            document.getElementById("enemyScore").textContent = enemyScore;
+          }
+        }, 500);
         break;
     }
   }
@@ -296,7 +311,6 @@ window.addEventListener("keyup", (event) => {
     case "a":
       keys.a.pressed = false;
       break;
-
     case "ArrowRight":
       keys.ArrowRight.pressed = false;
       break;

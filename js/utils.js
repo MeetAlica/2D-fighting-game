@@ -22,7 +22,7 @@ function determineWinner({ player, enemy, timerId }) {
   }
 }
 
-let timer = 21;
+let timer = 31;
 let timerId;
 function decreaseTimer() {
   if (timer > 0) {
@@ -33,6 +33,9 @@ function decreaseTimer() {
 
   if (timer === 0) {
     determineWinner({ player, enemy });
+
+    player.dead = true;
+    enemy.dead = true;
   }
 }
 
@@ -60,5 +63,7 @@ window.addEventListener("keydown", (event) => {
     enemy.dead = false;
 
     keys.Enter.pressed = false;
+
+    document.querySelector("#displayText").style.display = "none";
   }
 });
