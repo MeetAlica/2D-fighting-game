@@ -35,3 +35,30 @@ function decreaseTimer() {
     determineWinner({ player, enemy });
   }
 }
+
+// Restart game
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    keys.Enter.pressed = true;
+
+    clearTimeout(timerId);
+    timer = 21;
+    decreaseTimer();
+
+    player.health = 100;
+    gsap.to("#playerHealth", {
+      width: "100%",
+    });
+    player.switchSprite("idle");
+    player.dead = false;
+
+    enemy.health = 100;
+    gsap.to("#enemyHealth", {
+      width: "100%",
+    });
+    enemy.switchSprite("idle");
+    enemy.dead = false;
+
+    keys.Enter.pressed = false;
+  }
+});

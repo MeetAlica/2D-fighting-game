@@ -146,6 +146,9 @@ const keys = {
   ArrowLeft: {
     pressed: false,
   },
+  Enter: {
+    pressed: false,
+  },
 };
 
 decreaseTimer();
